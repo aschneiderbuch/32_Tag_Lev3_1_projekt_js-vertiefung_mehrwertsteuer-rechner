@@ -1,0 +1,52 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+* html,
+* body {
+  font-size: 16px;
+  max-width: 1440px;
+  scroll-behavior: smooth;
+}
+* html main > section,
+* body main > section {
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  padding-top: 30vh;
+}
+* html main > section form,
+* body main > section form {
+  background-color: #F3F6F8;
+  border-radius: 1rem;
+  padding: 1rem;
+  border: 2px solid black;
+  outline: 0.5rem solid khaki;
+  outline-offset: 0.5rem;
+  box-shadow: 0 0 0 1.5rem skyblue;
+}
+* html main > section form section,
+* body main > section form section {
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+
+.sec1_radioButtonsBruNet h2 {
+  font-size: 1.5rem;
+}
+.sec1_radioButtonsBruNet article input {
+  cursor: pointer;
+  scale: 2.5;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  margin-right: 1vw;
+}
+
+.sec_borderTopBottom___weiß {
+  border-top: 5px solid white;
+  border-bottom: 5px solid white;
+}
+
+/*# sourceMappingURL=style.css.map */
