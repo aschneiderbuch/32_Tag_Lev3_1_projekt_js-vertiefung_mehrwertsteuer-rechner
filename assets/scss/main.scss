@@ -1,0 +1,74 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+
+    html,
+    body {
+        font-size: 16px;
+        max-width: 1440px;
+        scroll-behavior: smooth;
+
+
+
+        main>section {
+            display: flex;
+            justify-content: center;
+            padding-top: 20vh;
+
+            form {
+                background-color: #F3F6F8;
+                border-radius: 1rem;
+                padding: 1rem;
+                border: 2px solid black;
+                outline: 0.5rem solid khaki;
+                outline-offset: 0.5rem;
+                box-shadow: 0 0 0 1.5rem skyblue;
+
+                section {
+                    padding-top: 2vh;
+                    padding-bottom: 2vh;
+                }
+
+            }
+        }
+    }
+}
+
+.sec1_radioButtonsBruNet {
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    article input {
+        cursor: pointer; // Finger beim draufbewegen
+        scale: 2.5;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        margin-right: 1vw;
+    }
+}
+
+.sec_borderTopBottom___weiß {
+    border-top: 5px solid white;
+    border-bottom: 5px solid white;
+}
+
+h3{
+    color:#3b88fd
+}
+
+#buttonBerechnen{
+    background-color: #3b88fd;
+    color: white;
+    border-radius: 1rem;
+    padding: 5px;
+margin-top: 3vh;
+width: 100%;
+font-size: 1.5rem;
+font-weight: bolder;
+cursor: pointer;
+
+}

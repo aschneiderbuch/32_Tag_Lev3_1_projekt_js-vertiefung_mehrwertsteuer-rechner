@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,12 +11,93 @@
         sass --watch assets/scss/main.scss assets/css/style.css
      -->
 </head>
-<body>
-    
 
+<body>
+
+    <main>
+        <section >
+            <form action="" onsubmit="return false">
+
+                <!--  Auswahl Netto zu Brutto    oder Brutto zu Netto -->
+                <section class="sec1_radioButtonsBruNet">
+
+                    <article>
+                        <h2>Was soll berechnet werden</h2>
+                    </article>
+ 
+                    <article>
+                        <input type="radio" name="radioNurEinenAuswählenKönnenDeshalbGleicherName" id="buttonNettoZuBrutto">
+                        <!-- input value ist beim laden on  -->
+                        <label for="nettoZuBrutto">Mehrwertsteuer aufschlagen (Netto zu Brutto)</label>
+                    </article>
+                    <article>
+                        <input type="radio" name="radioNurEinenAuswählenKönnenDeshalbGleicherName" id="buttonBruttoZuNetto">
+                        <label for="bruttoZuNetto">Mehrwertsteuer abziehen (Brutto zu Netto)</label>
+                    </article>
+                </section>
+
+                <!-- Auswahl  Steuersatz    19%   oder   7% -->
+                <section class="sec_borderTopBottom___weiß">
+                    <article>
+                        <h2>Mehrwertsteuersatz</h2>
+                    </article>
+
+                    <article >
+                        <input value="0.19" type="radio" name="radioNurEinenAuswählenKönnenDeshalbGleicherNameProzent" id="button19Prozent">
+                        <label id="labelText19Prozent" for="prozent19">19 %</label>
+
+                        <input type="radio" name="radioNurEinenAuswählenKönnenDeshalbGleicherNameProzent" id="button7Prozent">
+                        <label id="" for="prozent7"> <input type="number" name="prozent7" id="labelText7Prozent" value="7"> %</label>
+                        
+                    </article>
+
+                </section>
+
+                <!--  Wert input und button berechnen -->
+                <section>
+                    <article>
+                        <label for="inputNumber">
+                            <h2 id=output_Text___NettoBetrag>Nettobetrag (Preis ohne Mehrwertsteuer) in Euro</h2>
+                            <h2 id=output_Text___BruttoBetrag>Bruttobetrag (Preis inkl Mehrwertsteuer) in Euro</h2>
+
+                        </label>
+                        <input type="number" name="inputTextfeldNumber" id="inputTextfeldNumber" min="0" required >
+                        <article>
+                            <input id="buttonBerechnen" type="button" value="BERECHNEN">
+                        </article>
+                    </article>
+                </section>
+
+                <!-- Ergebniss Anzeige -->
+                <section>
+                <article>
+                    <h3>Ergebnis</h3>
+                </article>
+
+                <article class="sec_borderTopBottom___weiß">
+                    <label for="mehrwertsteuerbetrag">Mehrwertsteuerbetrag</label>
+                    <p id="output_MehrwertsteuerBetrag">... in €</p>
+                </article>
+
+                <article>
+<!--                     <label for="bruttoBetrag" value="">Bruttobetrag (Endpreis)</label>
+ -->                    <p id="output_Text___NettoSteuerName">Nettobetrag</p>
+                    <p id="output_Text___BruttoSteuerName">Bruttobetrag (Endpreis)</p>
+
+
+                    <p id="output_GeldBetrag">... in €</p>
+
+                </article>
+
+                </section>
+
+            </form>
+        </section>
+    </main>
 
 
 
     <script src="./assets/js/main.js"></script>
 </body>
+
 </html>
