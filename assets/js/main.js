@@ -58,25 +58,40 @@ let output_Text___NettoBetrag = document.querySelector("#output_Text___NettoBetr
 let output_Text___BruttoBetrag = document.querySelector("#output_Text___BruttoBetrag");
 output_Text___BruttoBetrag.style.display = "none";                           // blendet am Anfang den Text aus
 
-let output_Mehrwertsteuerbetrag = document.querySelector("#output_Mehrwertsteuerbetrag");
+let output_MehrwertsteuerBetrag = document.querySelector("#output_MehrwertsteuerBetrag");
 let output_Text___NettoGeldBetrag = document.querySelector("#output_Text___NettoGeldBetrag");
 let output_Text___BruttoSteuerName = document.querySelector("#output_Text___BruttoSteuerName");
 output_Text___BruttoSteuerName.style.display = "none";                           // blendet am Anfang den Text aus
+let output_GeldBetrag = document.querySelector("#output_GeldBetrag");
 
 
-// Event Listeners
+// Event Listeners        + function berechnen aufrufen
 button_Berechnen.addEventListener("click", berechnen);
 
 
-// Funktion berechnen
-
+// Funktion berechnen definieren
 function berechnen() {
 
-    console.log(input_TextfeldNumber.value);
+    // if radio 1-NeZuBr dann text über button und input    Netto display block
+    // und unten über Endbetrag   Brutto display block
 
+    if (radio_NettoZuBrutto.checked == true && radio_19Prozent.checked == true){
+        ErgebnisSteuer19Pro = (parseInt(input_TextfeldNumber.value)) * (parseInt(label_Text19Prozent.innerHTML)/100); 
+
+        ErgebnisBetrag = parseInt(input_TextfeldNumber.value) + ErgebnisSteuer;
+
+        // if 
+
+    }
+    else {
+        Ergebnis = "Fehler !!!"; 
+    }
+
+output_GeldBetrag.innerHTML = ErgebnisBetrag;
+output_MehrwertsteuerBetrag.innerHTML = ErgebnisSteuer19Pro;
 
 };
 
 
-
+// funktion berechnen verfügbar machen 
 berechnen();
