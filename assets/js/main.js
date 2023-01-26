@@ -47,6 +47,7 @@ console.log(parseInt(inputTextfeldNumber.value));                           // 2
 let label_Text19Prozent = document.querySelector("#labelText19Prozent");     // inhalt 19 % = weiß    holen  mit .innerHTML 
 console.log(label_Text19Prozent.innerHTML);
 console.log(parseInt(label_Text19Prozent.innerText));                        // praseInt     19 = blau     ohne % :-(
+let label_Text7Prozent = document.querySelector("#labelText7Prozent");
 
 // Button 
 let button_Berechnen = document.querySelector("#buttonBerechnen");
@@ -71,9 +72,12 @@ button_Berechnen.addEventListener("click", berechnen);
 radio_BruttoZuNetto.addEventListener("click", textWechsel);
 radio_NettoZuBrutto.addEventListener("click", textWechsel);
 
+
+
+
 // Funktion textWechsel
 function textWechsel() {
-        // if radio 1-NeZuBr dann text über button und input    Netto display block
+    // if radio 1-NeZuBr dann text über button und input    Netto display block
     // und unten über Endbetrag   Brutto display block
     if (radio_NettoZuBrutto.checked === true) {
         output_Text___BruttoBetrag.style = `display: none; color: green;`;   // none 
@@ -82,7 +86,7 @@ function textWechsel() {
         output_Text___NettoGeldBetrag.style = `display: block; color: red;`;  //block
 
     }
-    else if (radio_BruttoZuNetto.checked === true){
+    else if (radio_BruttoZuNetto.checked === true) {
         output_Text___BruttoBetrag.style = `display: block; color: green;`;   // block 
         output_Text___NettoBetrag.style = `display: none; color: red;`;     // none
         output_Text___BruttoSteuerName.style = `display: block; color: green;`; // block
@@ -102,13 +106,39 @@ function berechnen() {
 
 
     if (radio_NettoZuBrutto.checked == true && radio_19Prozent.checked == true && parseInt(input_TextfeldNumber.value) >= 0) {
-
-        ErgebnisSteuer19Pro = (parseInt(input_TextfeldNumber.value)) * (parseInt(label_Text19Prozent.innerHTML) / 100);
-        ErgebnisBetrag = parseInt(input_TextfeldNumber.value) + ErgebnisSteuer19Pro;
-
-        // if 
-
+        // Variante Netto zu Brutto mit 19 %
+        // Problem input_TextfeldNumber < 1 wird nicht gerechnet sondern gibt im Ergebnis 0 :-(
+        ErgebnisSteuer19Pro = (parseInt(input_TextfeldNumber.value)) * (parseInt(label_Text19Prozent.innerHTML) / 100).toFixed(2);;
+        ErgebnisBetrag = parseInt(input_TextfeldNumber.value) + parseInt(ErgebnisSteuer19Pro);
+        console.log(Number(input_TextfeldNumber.value))
+        console.log(ErgebnisBetrag);
+        console.log(ErgebnisSteuer19Pro);
     }
+    // Variante Netto zu Brutto mit 7 %
+    else if (radio_NettoZuBrutto.checked == true && radio_7Prozent.checked == true && parseInt(input_TextfeldNumber.value) >= 0) {
+        ErgebnisSteuer19Pro = ((parseInt(input_TextfeldNumber.value)) * (parseInt(label_Text7Prozent.innerHTML) / 100)).toFixed(2);    // toFixed(2) = 2 Nachkommastellen, denn bei Input 1 machte er immer 0.7000000000001 Steuer
+        ErgebnisBetrag = parseInt(input_TextfeldNumber.value) + parseInt(ErgebnisSteuer19Pro);
+        console.log(Number(input_TextfeldNumber.value))
+        console.log(ErgebnisBetrag);
+        console.log(ErgebnisSteuer19Pro);
+    }
+    // Variante Brutto zu Netto mit 19 %
+    else if (radio_BruttoZuNetto.checked == true && radio_19Prozent.checked == true && parseInt(input_TextfeldNumber.value) >= 0) {
+        ErgebnisSteuer19Pro = ((parseInt(input_TextfeldNumber.value)) * (parseInt(label_Text19Prozent.innerHTML) / 100)).toFixed(2);;
+        ErgebnisBetrag = parseInt(input_TextfeldNumber.value) + parseInt(ErgebnisSteuer19Pro);
+        console.log(Number(input_TextfeldNumber.value))
+        console.log(ErgebnisBetrag);
+        console.log(ErgebnisSteuer19Pro);
+    }
+    // Variante Brutto zu Netto mit 7 %
+    else if (radio_BruttoZuNetto.checked == true && radio_7Prozent.checked == true && parseInt(input_TextfeldNumber.value) >= 0) {
+        ErgebnisSteuer19Pro = ((parseInt(input_TextfeldNumber.value)) * (parseInt(label_Text7Prozent.innerHTML) / 100)).toFixed(2);    // toFixed(2) = 2 Nachkommastellen, denn bei Input 1 machte er immer 0.7000000000001 Steuer
+        ErgebnisBetrag = parseInt(input_TextfeldNumber.value) + parseInt(ErgebnisSteuer19Pro);
+        console.log(Number(input_TextfeldNumber.value))
+        console.log(ErgebnisBetrag);
+        console.log(ErgebnisSteuer19Pro);
+    }
+
 
 
     else {
