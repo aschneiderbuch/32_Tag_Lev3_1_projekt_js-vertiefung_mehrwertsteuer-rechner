@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,12 +11,87 @@
         sass --watch assets/scss/main.scss assets/css/style.css
      -->
 </head>
-<body>
-    
 
+<body>
+
+    <main>
+        <section>
+            <form action="" onsubmit="return false">
+
+                <!--  Auswahl Netto zu Brutto    oder Brutto zu Netto -->
+                <section>
+
+                    <article>
+                        <h2>Was soll berechnet werden</h2>
+                    </article>
+
+                    <article>
+                        <input type="radio" name="radioNurEinenAuswählenKönnenDeshalbGleicherName" id="buttonNettoZuBrutto">
+                        <label for="nettoZuBrutto">Mehrwertsteuer aufschlagen (Netto zu Brutto)</label>
+                    </article>
+                    <article>
+                        <input type="radio" name="radioNurEinenAuswählenKönnenDeshalbGleicherName" id="buttonBruttoZuNetto">
+                        <label for="bruttoZuNetto">Mehrwertsteuer abziehen (Brutto zu Netto)</label>
+                    </article>
+                </section>
+
+                <!-- Auswahl  Steuersatz    19%   oder   7% -->
+                <section>
+                    <article>
+                        <h2>Mehrwertsteuersatz</h2>
+                    </article>
+
+                    <article>
+                        <input type="radio" name="radioNurEinenAuswählenKönnenDeshalbGleicherNameProzent" id="button19Prozent">
+                        <label for="prozent19">19 %</label>
+
+                        <input type="radio" name="radioNurEinenAuswählenKönnenDeshalbGleicherNameProzent" id="button7Prozent">
+                        <label for="prozent7">7 %</label>
+                    </article>
+
+                </section>
+
+                <!--  Wert input und button berechnen -->
+                <section>
+                    <article>
+                        <label for="inputNumber">
+                            <h2>Nettobetrag (Preis ohne Mehrwertsteuer) in Euro</h2>
+                        </label>
+                        <input type="number" name="inputNumber" id="inputNumber">
+                        <article>
+                            <input id="buttonBerechnen" type="button" value="BERECHNEN">
+                        </article>
+                    </article>
+                </section>
+
+                <!-- Ergebniss Anzeige -->
+                <section>
+                <article>
+                    <h3>Ergebnis</h3>
+                </article>
+
+                <article>
+                    <label for="mehrwertsteuerbetrag">Mehrwertsteuerbetrag</label>
+                    <p id="outputMehrwertsteuer">Mehrwertsteuerbetrag in €</p>
+                </article>
+
+                <article>
+                    <label for="bruttoBetrag" value="">Bruttobetrag (Endpreis)</label>
+                    <p id="outputSteuerName">Bruttobetrag (Endpreis)</p>
+
+                    <p id="outputGeldBetrag">Betrag Brutto oder Netto in €</p>
+
+                </article>
+
+                </section>
+
+            </form>
+        </section>
+    </main>
 
 
 
     <script src="./assets/js/main.js"></script>
 </body>
+
 </html>
