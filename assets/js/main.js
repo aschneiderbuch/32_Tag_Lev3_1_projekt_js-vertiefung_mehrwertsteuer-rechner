@@ -59,7 +59,7 @@ let output_Text___BruttoBetrag = document.querySelector("#output_Text___BruttoBe
 output_Text___BruttoBetrag.style.display = "none";                           // blendet am Anfang den Text aus
 
 let output_MehrwertsteuerBetrag = document.querySelector("#output_MehrwertsteuerBetrag");
-let output_Text___NettoGeldBetrag = document.querySelector("#output_Text___NettoGeldBetrag");
+let output_Text___NettoGeldBetrag = document.querySelector("#output_Text___NettoSteuerName");
 let output_Text___BruttoSteuerName = document.querySelector("#output_Text___BruttoSteuerName");
 output_Text___BruttoSteuerName.style.display = "none";                           // blendet am Anfang den Text aus
 let output_GeldBetrag = document.querySelector("#output_GeldBetrag");
@@ -68,27 +68,56 @@ let output_GeldBetrag = document.querySelector("#output_GeldBetrag");
 // Event Listeners        + function berechnen aufrufen
 button_Berechnen.addEventListener("click", berechnen);
 
+radio_BruttoZuNetto.addEventListener("click", textWechsel);
+radio_NettoZuBrutto.addEventListener("click", textWechsel);
+
+// Funktion textWechsel
+function textWechsel() {
+        // if radio 1-NeZuBr dann text über button und input    Netto display block
+    // und unten über Endbetrag   Brutto display block
+    if (radio_NettoZuBrutto.checked === true) {
+        output_Text___BruttoBetrag.style = `display: none; color: green;`;   // none 
+        output_Text___NettoBetrag.style = `display: block; color: red;`;     // block
+        output_Text___BruttoSteuerName.style = `display: none; color: green;`; // none
+        output_Text___NettoGeldBetrag.style = `display: block; color: red;`;  //block
+
+    }
+    else if (radio_BruttoZuNetto.checked === true){
+        output_Text___BruttoBetrag.style = `display: block; color: green;`;   // block 
+        output_Text___NettoBetrag.style = `display: none; color: red;`;     // none
+        output_Text___BruttoSteuerName.style = `display: block; color: green;`; // block
+        output_Text___NettoGeldBetrag.style = `display: none; color: red;`;  //none
+    }
+    else {
+    }
+
+};
+
+
+
 
 // Funktion berechnen definieren
 function berechnen() {
 
-    // if radio 1-NeZuBr dann text über button und input    Netto display block
-    // und unten über Endbetrag   Brutto display block
 
-    if (radio_NettoZuBrutto.checked == true && radio_19Prozent.checked == true){
-        ErgebnisSteuer19Pro = (parseInt(input_TextfeldNumber.value)) * (parseInt(label_Text19Prozent.innerHTML)/100); 
 
-        ErgebnisBetrag = parseInt(input_TextfeldNumber.value) + ErgebnisSteuer;
+    if (radio_NettoZuBrutto.checked == true && radio_19Prozent.checked == true && parseInt(input_TextfeldNumber.value) >= 0) {
+
+        ErgebnisSteuer19Pro = (parseInt(input_TextfeldNumber.value)) * (parseInt(label_Text19Prozent.innerHTML) / 100);
+        ErgebnisBetrag = parseInt(input_TextfeldNumber.value) + ErgebnisSteuer19Pro;
 
         // if 
 
     }
+
+
     else {
-        Ergebnis = "Fehler !!!"; 
+        ErgebnisBetrag = "Fehler !!!";
     }
 
-output_GeldBetrag.innerHTML = ErgebnisBetrag;
-output_MehrwertsteuerBetrag.innerHTML = ErgebnisSteuer19Pro;
+
+    output_GeldBetrag.innerHTML = ErgebnisBetrag;
+    output_MehrwertsteuerBetrag.innerHTML = ErgebnisSteuer19Pro;
 
 };
 
