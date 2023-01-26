@@ -115,10 +115,11 @@ function berechnen() {
         console.log(ErgebnisBetrag);
         console.log(ErgebnisSteuer19Pro);
     }
-    // Variante Netto zu Brutto mit 7 %
+    // Variante Netto zu Brutto mit 7 %           7% anstatt lable inputFeld    dann .value anstatt .innerHTML
     else if (radio_NettoZuBrutto.checked == true && radio_7Prozent.checked == true && parseInt(input_TextfeldNumber.value) >= 0) {
-        ErgebnisSteuer19Pro = ((parseInt(input_TextfeldNumber.value)) * (parseInt(label_Text7Prozent.innerHTML) / 100)).toFixed(2);  // 100   // toFixed(2) = 2 Nachkommastellen, denn bei Input 1 machte er immer 0.7000000000001 Steuer
+        ErgebnisSteuer19Pro = ((parseInt(input_TextfeldNumber.value)) * (parseInt(label_Text7Prozent.value) / 100)).toFixed(2);  // 100   // toFixed(2) = 2 Nachkommastellen, denn bei Input 1 machte er immer 0.7000000000001 Steuer 7% anstatt lable inputFeld    dann .value anstatt .innerHTML
         ErgebnisBetrag = parseInt(input_TextfeldNumber.value) + parseInt(ErgebnisSteuer19Pro);
+        console.log(parseInt(label_Text7Prozent.value));
         console.log(Number(input_TextfeldNumber.value))
         console.log(ErgebnisBetrag);
         console.log(ErgebnisSteuer19Pro);
@@ -131,9 +132,9 @@ function berechnen() {
         console.log(ErgebnisBetrag);
         console.log(ErgebnisSteuer19Pro);
     }
-    // Variante Brutto zu Netto mit 7 %
+    // Variante Brutto zu Netto mit 7 %          7% anstatt lable inputFeld    dann .value anstatt .innerHTML
     else if (radio_BruttoZuNetto.checked == true && radio_7Prozent.checked == true && parseInt(input_TextfeldNumber.value) >= 0) {
-        ErgebnisSteuer19Pro = ((parseInt(input_TextfeldNumber.value)/107) * (parseInt(label_Text7Prozent.innerHTML))).toFixed(2);    // toFixed(2) = 2 Nachkommastellen, denn bei Input 1 machte er immer 0.7000000000001 Steuer
+        ErgebnisSteuer19Pro = ((parseInt(input_TextfeldNumber.value)/107) * (parseInt(label_Text7Prozent.value))).toFixed(2);    // toFixed(2) = 2 Nachkommastellen, denn bei Input 1 machte er immer 0.7000000000001 Steuer  7% anstatt lable inputFeld    dann .value anstatt .innerHTML
         ErgebnisBetrag = parseInt(input_TextfeldNumber.value) - parseInt(ErgebnisSteuer19Pro);     // - statt + 
         console.log(Number(input_TextfeldNumber.value))
         console.log(ErgebnisBetrag);

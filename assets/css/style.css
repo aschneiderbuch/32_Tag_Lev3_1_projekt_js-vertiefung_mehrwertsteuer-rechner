@@ -12,10 +12,9 @@
 }
 * html main > section,
 * body main > section {
-  background-color: red;
   display: flex;
   justify-content: center;
-  padding-top: 30vh;
+  padding-top: 20vh;
 }
 * html main > section form,
 * body main > section form {
@@ -47,6 +46,22 @@
 .sec_borderTopBottom___weiß {
   border-top: 5px solid white;
   border-bottom: 5px solid white;
+}
+
+h3 {
+  color: #3b88fd;
+}
+
+#buttonBerechnen {
+  background-color: #3b88fd;
+  color: white;
+  border-radius: 1rem;
+  padding: 5px;
+  margin-top: 3vh;
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
