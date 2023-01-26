@@ -93,6 +93,7 @@ function textWechsel() {
         output_Text___NettoGeldBetrag.style = `display: none; color: red;`;  //none
     }
     else {
+        // wenn was passieren sollte falls nichts zutrifft
     }
 
 };
@@ -116,24 +117,24 @@ function berechnen() {
     }
     // Variante Netto zu Brutto mit 7 %
     else if (radio_NettoZuBrutto.checked == true && radio_7Prozent.checked == true && parseInt(input_TextfeldNumber.value) >= 0) {
-        ErgebnisSteuer19Pro = ((parseInt(input_TextfeldNumber.value)) * (parseInt(label_Text7Prozent.innerHTML) / 100)).toFixed(2);    // toFixed(2) = 2 Nachkommastellen, denn bei Input 1 machte er immer 0.7000000000001 Steuer
+        ErgebnisSteuer19Pro = ((parseInt(input_TextfeldNumber.value)) * (parseInt(label_Text7Prozent.innerHTML) / 100)).toFixed(2);  // 100   // toFixed(2) = 2 Nachkommastellen, denn bei Input 1 machte er immer 0.7000000000001 Steuer
         ErgebnisBetrag = parseInt(input_TextfeldNumber.value) + parseInt(ErgebnisSteuer19Pro);
         console.log(Number(input_TextfeldNumber.value))
         console.log(ErgebnisBetrag);
         console.log(ErgebnisSteuer19Pro);
     }
-    // Variante Brutto zu Netto mit 19 %
+    // Variante Brutto zu Netto mit 19 %    Input_Textfeld.. = 119 %
     else if (radio_BruttoZuNetto.checked == true && radio_19Prozent.checked == true && parseInt(input_TextfeldNumber.value) >= 0) {
-        ErgebnisSteuer19Pro = ((parseInt(input_TextfeldNumber.value)) * (parseInt(label_Text19Prozent.innerHTML) / 100)).toFixed(2);;
-        ErgebnisBetrag = parseInt(input_TextfeldNumber.value) + parseInt(ErgebnisSteuer19Pro);
+        ErgebnisSteuer19Pro = ((parseInt(input_TextfeldNumber.value)/119) * (parseInt(label_Text19Prozent.innerHTML))).toFixed(2);;    // 119 weil der Eingabewert bei Bruto ja 119 % ist, da die MwSt ja schon enthalten ist ;-)
+        ErgebnisBetrag = parseInt(input_TextfeldNumber.value) - parseInt(ErgebnisSteuer19Pro);    // - statt + 
         console.log(Number(input_TextfeldNumber.value))
         console.log(ErgebnisBetrag);
         console.log(ErgebnisSteuer19Pro);
     }
     // Variante Brutto zu Netto mit 7 %
     else if (radio_BruttoZuNetto.checked == true && radio_7Prozent.checked == true && parseInt(input_TextfeldNumber.value) >= 0) {
-        ErgebnisSteuer19Pro = ((parseInt(input_TextfeldNumber.value)) * (parseInt(label_Text7Prozent.innerHTML) / 100)).toFixed(2);    // toFixed(2) = 2 Nachkommastellen, denn bei Input 1 machte er immer 0.7000000000001 Steuer
-        ErgebnisBetrag = parseInt(input_TextfeldNumber.value) + parseInt(ErgebnisSteuer19Pro);
+        ErgebnisSteuer19Pro = ((parseInt(input_TextfeldNumber.value)/107) * (parseInt(label_Text7Prozent.innerHTML))).toFixed(2);    // toFixed(2) = 2 Nachkommastellen, denn bei Input 1 machte er immer 0.7000000000001 Steuer
+        ErgebnisBetrag = parseInt(input_TextfeldNumber.value) - parseInt(ErgebnisSteuer19Pro);     // - statt + 
         console.log(Number(input_TextfeldNumber.value))
         console.log(ErgebnisBetrag);
         console.log(ErgebnisSteuer19Pro);
@@ -142,7 +143,7 @@ function berechnen() {
 
 
     else {
-        ErgebnisBetrag = "Fehler !!!";
+        // wenn was passieren sollte falls nichts zutrifft
     }
 
 
