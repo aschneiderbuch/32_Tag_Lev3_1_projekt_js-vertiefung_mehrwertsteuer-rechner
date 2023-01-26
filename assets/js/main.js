@@ -31,96 +31,52 @@ dann output Ergebnis in
 //Varibalen
 
 // Input 
-let tt2 = document.getElementById("buttonNettoZuBrutto");
+let radio_NettoZuBrutto = document.querySelector("#buttonNettoZuBrutto");  // true oder false = blau      holen mit  .checked 
+console.log(radio_NettoZuBrutto.checked);
+console.log("Radio NetZuBru mit .checked geholt: " + radio_NettoZuBrutto.checked + " = blau = Zahl");
+let radio_BruttoZuNetto = document.querySelector("#buttonBruttoZuNetto");
+let radio_19Prozent = document.querySelector("#button19Prozent");
+let radio_7Prozent = document.querySelector("#button7Prozent");
 
-let buttonNettoZuBrutto = document.querySelector("#buttonNettoZuBrutto");
-console.log(buttonNettoZuBrutto);
-console.log(buttonNettoZuBrutto.value);   // geht nicht, zeigt nicht an ob ausgewählt oder nicht :-(
-console.log(buttonNettoZuBrutto.checked); // geht    true = ausgewählt 
+let input_TextfeldNumber = document.querySelector("#inputTextfeldNumber");
+console.log(inputTextfeldNumber.value);                                     // 22    holen mit .value      
+console.log(parseInt(inputTextfeldNumber.value));                           // 22 = blau = Zahl  
+// wird erst in der Funktion angezeigt, 
+// weil zuerst der Butten ausgelöst werden muss
 
-let buttonBruttoZuNetto = document.querySelector("#buttonBruttoZuNetto");
-console.log(buttonBruttoZuNetto);
-console.log(buttonBruttoZuNetto.value);
-console.log(buttonBruttoZuNetto.checked); // geht    true =
-
-let button19Prozent = document.querySelector("#button19Prozent");
-console.log(button19Prozent);
-console.log(button19Prozent.value);
-console.log(button19Prozent.checked); // geht    true =
-
-let button7Prozent = document.querySelector("#button7Prozent");
-console.log(button7Prozent);
-console.log(button7Prozent.value);
-console.log(button7Prozent.checked); // geht    true =
-
-let inputNumber = document.querySelector("#inputNumber");
-console.log(inputNumber);
-console.log(inputNumber.value);
-console.log(inputNumber.innerHTML);
-
+let label_Text19Prozent = document.querySelector("#labelText19Prozent");     // inhalt 19 % = weiß    holen  mit .innerHTML 
+console.log(label_Text19Prozent.innerHTML);
+console.log(parseInt(label_Text19Prozent.innerText));                        // praseInt     19 = blau     ohne % :-(
 
 // Button 
-let buttonBerechnen = document.querySelector("#buttonBerechnen");
+let button_Berechnen = document.querySelector("#buttonBerechnen");
 
 
 // Output
+let output_Text___NettoBetrag = document.querySelector("#output_Text___NettoBetrag");
+
+let output_Text___BruttoBetrag = document.querySelector("#output_Text___BruttoBetrag");
+output_Text___BruttoBetrag.style.display = "none";                           // blendet am Anfang den Text aus
+
 let output_Mehrwertsteuerbetrag = document.querySelector("#output_Mehrwertsteuerbetrag");
-
-let output_SteuerName = document.querySelector("#output_SteuerName");
-
-let output_GeldBetrag = document.querySelector("#output_GeldBetrag");
+let output_Text___NettoGeldBetrag = document.querySelector("#output_Text___NettoGeldBetrag");
+let output_Text___BruttoSteuerName = document.querySelector("#output_Text___BruttoSteuerName");
+output_Text___BruttoSteuerName.style.display = "none";                           // blendet am Anfang den Text aus
 
 
 // Event Listeners
-buttonBerechnen.addEventListener("click", berechnen);
+button_Berechnen.addEventListener("click", berechnen);
 
 
 // Funktion berechnen
 
 function berechnen() {
-    console.log(button19Prozent.checked);
 
-    let inputNettoZuBrutto = buttonNettoZuBrutto.checked;
-    console.log(inputNettoZuBrutto);
-
-    let inputBruttoZuNetto = buttonBruttoZuNetto.checked;
-    console.log(inputBruttoZuNetto);
-
-    let input19Prozent = button19Prozent.checked;
-    console.log(input19Prozent);
-
-    let input7Prozent = button7Prozent.checked;
-    console.log(input7Prozent);
-
-
-    let inputNumberWert = Number(inputNumber.value);    // mit Number wird es zu Zahl und blau   // wenn leer, dann 0
-    let inputNumberWert2 = parseInt(inputNumber.value); 
-                        // mit parseInt wird es zu Zahl und blau   // wenn leer,   
-                             //  !!!   dann NaN
-    console.log(inputNumberWert);
-    console.log(inputNumberWert2);
-
-let 
-
-
+    console.log(input_TextfeldNumber.value);
 
 
 };
 
-// als Arrow Funktion berechnen
-berechnen2 = () => {
-    console.log(button19Prozent.value);
-
-};
 
 
 berechnen();
-
-
-
-
-
-
-
-console.log(0.1 * 80000000);
-

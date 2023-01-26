@@ -43,8 +43,8 @@
                     </article>
 
                     <article>
-                        <input type="radio" name="radioNurEinenAuswählenKönnenDeshalbGleicherNameProzent" id="button19Prozent">
-                        <label for="prozent19">19 %</label>
+                        <input value="0.19" type="radio" name="radioNurEinenAuswählenKönnenDeshalbGleicherNameProzent" id="button19Prozent">
+                        <label id="labelText19Prozent" for="prozent19">19 %</label>
 
                         <input type="radio" name="radioNurEinenAuswählenKönnenDeshalbGleicherNameProzent" id="button7Prozent">
                         <label for="prozent7">7 %</label>
@@ -56,9 +56,11 @@
                 <section>
                     <article>
                         <label for="inputNumber">
-                            <h2>Nettobetrag (Preis ohne Mehrwertsteuer) in Euro</h2>
+                            <h2 id=output_Text___NettoBetrag>Nettobetrag (Preis ohne Mehrwertsteuer) in Euro</h2>
+                            <h2 id=output_Text___BruttoBetrag>Bruttobetrag (Preis inkl Mehrwertsteuer) in Euro</h2>
+
                         </label>
-                        <input type="number" name="inputNumber" id="inputNumber">
+                        <input type="number" name="inputTextfeldNumber" id="inputTextfeldNumber">
                         <article>
                             <input id="buttonBerechnen" type="button" value="BERECHNEN">
                         </article>
@@ -73,14 +75,16 @@
 
                 <article>
                     <label for="mehrwertsteuerbetrag">Mehrwertsteuerbetrag</label>
-                    <p id="outputMehrwertsteuer">Mehrwertsteuerbetrag in €</p>
+                    <p id="output_MehrwertsteuerBetrag">... in €</p>
                 </article>
 
                 <article>
-                    <label for="bruttoBetrag" value="">Bruttobetrag (Endpreis)</label>
-                    <p id="outputSteuerName">Bruttobetrag (Endpreis)</p>
+<!--                     <label for="bruttoBetrag" value="">Bruttobetrag (Endpreis)</label>
+ -->                    <p id="output_Text___NettoSteuerName">Nettobetrag</p>
+                    <p id="output_Text___BruttoSteuerName">Bruttobetrag (Endpreis)</p>
 
-                    <p id="outputGeldBetrag">Betrag Brutto oder Netto in €</p>
+
+                    <p id="output_GeldBetrag">... in €</p>
 
                 </article>
 
